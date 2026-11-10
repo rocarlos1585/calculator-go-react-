@@ -1,0 +1,10 @@
+.git
+**/node_modules
+frontend/dist
+frontend/coverage
+backend/coverage.out
+backend/coverage.html
+**/.DS_Store
+Dockerfile
+.dockerignore
+*.md

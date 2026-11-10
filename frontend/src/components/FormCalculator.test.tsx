@@ -4,6 +4,7 @@ import type { UserEvent } from '@testing-library/user-event'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { ApiError, calculate } from '../api/calculatorApi'
 import FormCalculator from './FormCalculator'
+import { deferred } from '../test/helpers'
 
 vi.mock('../api/calculatorApi', async (importOriginal) => {
   const actual = await importOriginal<typeof import('../api/calculatorApi')>()
@@ -11,14 +12,6 @@ vi.mock('../api/calculatorApi', async (importOriginal) => {
 })
 
 const calculateMock = vi.mocked(calculate)
-
-function deferred<T>() {
-  let resolve!: (value: T) => void
-  const promise = new Promise<T>((res) => {
-    resolve = res
-  })
-  return { promise, resolve }
-}
 
 async function fillAndSubmit(user: UserEvent, a: string, b: string) {
   if (a) await user.type(screen.getByLabelText('First number'), a)
