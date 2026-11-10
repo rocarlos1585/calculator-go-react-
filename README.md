@@ -120,7 +120,7 @@ npm test
 npm run coverage
 ```
 
-Current coverage: backend `calculator` 100%, `api` 91.3% (the uncovered lines are defensive error branches); frontend XX%.
+Current coverage: backend `calculator` 100%, `api` 91.3% (the uncovered lines are defensive error branches); frontend 98%.
 
 ## Design decisions and assumptions
 
