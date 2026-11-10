@@ -84,7 +84,10 @@ export default function KeypadCalculator() {
         <div className="expression" aria-hidden="true">
           {pending}
         </div>
-        <output className="display" aria-label="Display">
+        <output
+          className={state.display.length > 11 ? 'display display-long' : 'display'}
+          aria-label="Display"
+        >
           {state.display}
         </output>
       </div>
